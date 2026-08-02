@@ -1,0 +1,17 @@
+﻿<html><head><meta charset='utf-8'><style>
+body{font-family:Consolas,monospace;background:#fff;margin:24px;color:#000}
+h1{font-size:18px;font-family:Calibri,sans-serif}
+table{border-collapse:collapse;margin:12px 0 20px 0}
+th{background:#0078d4;color:#fff;padding:6px 10px;border:1px solid #555;text-align:left}
+td{padding:6px 10px;border:1px solid #999}
+.cap{color:#444}
+</style></head><body>
+<h1>03-permissions.sql — public EXECUTE on lab procedures (BEFORE)</h1>
+<p>Instance: localhost\SQLEXPRESS | Database: AdventureWorks2022 | Captured: 2026-08-02 19:35</p>
+<table><tr><th>schema_name</th><th>object_name</th><th>grantee</th><th>permission_name</th><th>state_desc</th></tr>
+<tr><td>dbo</td><td>usp_LabGetEmployee_Elevate</td><td>public</td><td>EXECUTE</td><td>GRANT</td></tr>
+<tr><td>dbo</td><td>usp_LabRunCommand_Dangerous</td><td>public</td><td>EXECUTE</td><td>GRANT</td></tr>
+<tr><td>dbo</td><td>usp_LabSearchProducts_Unsafe</td><td>public</td><td>EXECUTE</td><td>GRANT</td></tr>
+</table>
+<p class='cap'>(3 rows affected)</p>
+</body></html>

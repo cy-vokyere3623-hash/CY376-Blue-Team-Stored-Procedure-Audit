@@ -1,41 +1,54 @@
-# OS / editor
+# OS / editor junk
 Thumbs.db
 Desktop.ini
 .DS_Store
+~$*
 *.tmp
+*.bak
 *.swp
-.vscode/
-.idea/
 
-# Secrets and credentials
+# Secrets and local env
 .env
+.env.*
 *.pfx
 *.pem
-*password*
-*secret*
 credentials*.json
+secrets.*
 
 # Large database backups (download separately)
-*.bak
-downloads/
-lab/backups/
+downloads/*.bak
+lab/backups/*.bak
+**/*.bak
 
-# SQL / install noise logs (optional keep if desired)
-# Uncomment to ignore local install clutter:
-# *.log
-# winget-*.txt
-# ssms-*.txt
-# install-*.log
-# install-*.txt
-# still-installing.txt
-# shell-test.txt
+# Local install / winget noise
+*.log
+install-*.txt
+winget-*.txt
+ssms-*.txt
+sql-*.txt
+sqlcmd-test.txt
+shell-test.txt
+still-installing.txt
+install-status.txt
+setup-report.txt
+ads-manual-install.log
+ssms-manual-install.log
 
-# Tools binaries (large)
-tools/sqlcmd/*.zip
+# Local tool binaries (optional local copies)
 tools/sqlcmd/*.exe
+tools/sqlcmd/*.zip
+tools/sqlcmd/NOTICE.md
 
-# Python / Node clutter if added later
+# Python cache
 __pycache__/
-node_modules/
+*.pyc
 .venv/
 venv/
+
+# Word / Office lock files
+~$*.docx
+~$*.pptx
+
+evidence/raw/gh-auth-login.txt
+downloads/
+

@@ -1,0 +1,23 @@
+﻿<html><head><meta charset='utf-8'><style>
+body{font-family:Consolas,monospace;background:#fff;margin:24px;color:#000}
+h1{font-size:18px;font-family:Calibri,sans-serif}
+h2{font-size:14px;font-family:Calibri,sans-serif;color:#333}
+table{border-collapse:collapse;margin:12px 0 20px 0}
+th{background:#0078d4;color:#fff;padding:6px 10px;border:1px solid #555;text-align:left}
+td{padding:6px 10px;border:1px solid #999}
+.cap{color:#444;margin-bottom:18px}
+</style></head><body>
+<h1>02-code-patterns.sql — BEFORE remediation</h1>
+<p>Instance: localhost\SQLEXPRESS | Database: AdventureWorks2022 | Captured: 2026-08-02 19:35</p>
+<h2>Dangerous code patterns</h2>
+<table><tr><th>schema_name</th><th>object_name</th><th>type_desc</th></tr>
+<tr><td>dbo</td><td>usp_LabRunCommand_Dangerous</td><td>SQL_STORED_PROCEDURE</td></tr>
+<tr><td>dbo</td><td>usp_LabSearchProducts_Unsafe</td><td>SQL_STORED_PROCEDURE</td></tr>
+</table>
+<p class='cap'>(2 rows affected)</p>
+<h2>EXECUTE AS elevation</h2>
+<table><tr><th>schema_name</th><th>procedure_name</th><th>execute_as_principal</th></tr>
+<tr><td>dbo</td><td>usp_LabGetEmployee_Elevate</td><td>EXECUTE AS OWNER</td></tr>
+</table>
+<p class='cap'>(1 rows affected)</p>
+</body></html>

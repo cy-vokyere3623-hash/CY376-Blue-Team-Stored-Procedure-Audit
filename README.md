@@ -1,53 +1,50 @@
-# CY376 Blue Team: Auditing Stored Procedures and Database Objects
+﻿# Blue Team: Auditing Stored Procedures and Database Objects for Security Weaknesses
 
+**Course:** CY376 â€” Network Monitoring, Security and Auditing  
 **Student:** Veronica Okyere  
-**Index Number:** FCM.41,018.206.23  
-**Course:** CY376 — Network Monitoring, Security and Auditing  
-**Track:** Blue Team  
-**GitHub:** https://github.com/cy-vokyere3623-hash/CY376-Blue-Team-Stored-Procedure-Audit  
+**Index Number:** FCM.41.018.206.23  
+**Team:** Blue Team  
+**Date:** August 2026
 
 ## Summary
 
-This project audits Microsoft SQL Server stored procedures and database objects for security weaknesses in an isolated lab. It covers inventory, dangerous code-pattern detection, permission review, server hardening checks, SQL Server Audit, remediation, and verification.
+This project is a blue-team security audit of stored procedures and database objects on Microsoft SQL Server 2022 Express. It covers inventory, detection of dangerous code and permission patterns, documentation of findings, remediation, and verification in an isolated lab using AdventureWorks2022.
 
 ## Tools used
 
-- SQL Server 2022 Express (`localhost\SQLEXPRESS`)
-- SQL Server Management Studio 21
+- Microsoft SQL Server 2022 Express (`localhost\SQLEXPRESS`)
+- SQL Server Management Studio (SSMS) 21
 - AdventureWorks2022 sample database
 - Custom T-SQL audit and remediation scripts
-- Windows Application Log (SQL Server Audit destination)
+- Windows PowerShell / sqlcmd
 
 ## Repository layout
 
 ```text
-├── README.md
-├── .gitignore
-├── scripts/                 # Audit scripts 01–05
-├── lab/                     # Vulnerable seed + remediation SQL
-├── docs/                    # Working findings notes
-├── evidence/screenshots/    # Insert SSMS screenshots here
-├── report/                  # Full academic report (Markdown → PDF)
-├── presentation/            # 10-minute slide outline
-└── reports/                 # Short executive summary
+scripts/                 Audit scripts (01â€“05)
+lab/                     Vulnerable lab setup + remediation
+docs/                    Findings notes and prerequisites
+evidence/screenshots/    Captioned SSMS evidence images
+reports/                 Final Word report + PDF
+presentation/            10-minute presentation materials
 ```
 
 ## How to run the lab
 
-1. Open SSMS and connect to `localhost\SQLEXPRESS` (Windows Authentication).
-2. Confirm `AdventureWorks2022` is online.
-3. Run `lab/setup-vulnerable-procs.sql` to create the practice weaknesses.
-4. Run in order:
+1. Install SQL Server Express + SSMS and restore AdventureWorks2022.
+2. Connect in SSMS to `localhost\SQLEXPRESS` with Windows Authentication.
+3. Run `lab/setup-vulnerable-procs.sql` to create intentionally weak lab procedures.
+4. Run audit scripts in order:
    - `scripts/01-inventory.sql`
    - `scripts/02-code-patterns.sql`
    - `scripts/03-permissions.sql`
    - `scripts/04-server-config.sql`
    - `scripts/05-audit-check.sql`
-5. Record findings in `docs/findings-template.md`.
+5. Review findings in `docs/findings-template.md`.
 6. Run `lab/remediate-findings.sql`.
-7. Re-run scripts `02`–`05` to verify fixes.
+7. Re-run scripts `02`â€“`05` to verify remediation.
 
-## Key findings (all remediated)
+## Key findings (all fixed)
 
 | ID | Severity | Issue |
 |----|----------|-------|
@@ -58,23 +55,21 @@ This project audits Microsoft SQL Server stored procedures and database objects 
 | F-005 | Medium | SQL Server Audit missing |
 | F-006 | Low | `remote access` enabled |
 
-## Report and presentation
+## Report and evidence
 
-- Full report draft: `report/CY376-Blue-Team-Report.md`
-- Convert that file to Word/PDF, insert screenshots, print for Monday submission
-- Presentation outline: `presentation/10-minute-slides.md`
-
-## Screenshots
-
-Place cropped SSMS evidence in `evidence/screenshots/` using the checklist in `evidence/screenshots/README.md`.
+- Final report (Word): `reports/CY376-Blue-Team-Report.docx`
+- Final report (PDF): `reports/CY376-Blue-Team-Report.pdf`
+- Evidence screenshots: `evidence/screenshots/`
+- Screenshot index: `evidence/README.md`
 
 ## References
 
-- CIS Microsoft SQL Server Benchmarks
-- OWASP SQL Injection Prevention Cheat Sheet
-- Microsoft SQL Server Audit documentation
-- NetSPI SQL Server Detective Control Cheat Sheet
+- [CIS Microsoft SQL Server Benchmarks](https://www.cisecurity.org/benchmark/microsoft_sql_server)
+- [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
+- [Microsoft SQL Server Audit](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/sql-server-audit-action-groups-and-actions)
+- [NetSPI SQL Server Detective Control Cheat Sheet](https://github.com/NetSPI/PowerUpSQL/wiki/SQL-Server-Detective-Control-Cheat-Sheet)
 
 ## Academic integrity note
 
-This repository contains laboratory scripts and documentation for coursework. Do not use the intentionally vulnerable procedures outside an isolated lab.
+Vulnerable procedures in `lab/` are intentional training artefacts for this course lab only. Do not deploy them to production systems.
+

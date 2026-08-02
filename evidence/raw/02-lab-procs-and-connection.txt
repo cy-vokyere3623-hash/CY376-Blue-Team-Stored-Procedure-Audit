@@ -1,0 +1,15 @@
+﻿Changed database context to 'AdventureWorks2022'.
+name
+----
+usp_LabGetEmployee_Elevate
+usp_LabGetEmployee_Safe
+usp_LabRunCommand_Dangerous
+usp_LabSearchProducts_Safe
+usp_LabSearchProducts_Unsafe
+
+(5 rows affected)
+current_db|server_name
+----------|-----------
+AdventureWorks2022|NoVa\SQLEXPRESS
+
+(1 rows affected)
