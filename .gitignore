@@ -1,0 +1,41 @@
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+# Secrets and credentials
+.env
+*.pfx
+*.pem
+*password*
+*secret*
+credentials*.json
+
+# Large database backups (download separately)
+*.bak
+downloads/
+lab/backups/
+
+# SQL / install noise logs (optional keep if desired)
+# Uncomment to ignore local install clutter:
+# *.log
+# winget-*.txt
+# ssms-*.txt
+# install-*.log
+# install-*.txt
+# still-installing.txt
+# shell-test.txt
+
+# Tools binaries (large)
+tools/sqlcmd/*.zip
+tools/sqlcmd/*.exe
+
+# Python / Node clutter if added later
+__pycache__/
+node_modules/
+.venv/
+venv/
