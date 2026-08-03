@@ -56,10 +56,12 @@ relaunch-ssms.ps1
 setup-lab.ps1
 install-*.ps1
 
-# Presentation working previews / drafts
+# Presentation working previews / drafts / speaking notes (local only)
 presentation/slide-previews/
 presentation/*-preview.png
 presentation/~$*
+presentation/10-minute-presentation.md
+presentation/how-to-present.md
 
 # Print-only working folders
 evidence/print-screenshots/
