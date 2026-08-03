@@ -39,6 +39,33 @@ tools/sqlcmd/*.exe
 tools/sqlcmd/*.zip
 tools/sqlcmd/NOTICE.md
 
+# Local-only helper/build scripts (not part of submission deliverables)
+tools/build_*.py
+tools/fix_*.py
+tools/inspect_*.py
+tools/rebuild_*.py
+tools/ssms_*.py
+tools/export_*.ps1
+tools/capture-*.ps1
+PUSH-TO-GITHUB.ps1
+*-manual.ps1
+check-*.ps1
+download-*.ps1
+finalize-setup.ps1
+relaunch-ssms.ps1
+setup-lab.ps1
+install-*.ps1
+
+# Presentation working previews / drafts
+presentation/slide-previews/
+presentation/*-preview.png
+presentation/~$*
+
+# Print-only working folders
+evidence/print-screenshots/
+reports/print-figures/
+reports/CY376-Print-Figures-Only.pdf
+
 # Python cache
 __pycache__/
 *.pyc
