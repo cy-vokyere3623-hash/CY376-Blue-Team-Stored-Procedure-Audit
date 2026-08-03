@@ -56,7 +56,7 @@ relaunch-ssms.ps1
 setup-lab.ps1
 install-*.ps1
 
-# Presentation working previews / drafts / speaking notes (local only)
+# Presentation working previews / drafts / speaking notes (keep local only)
 presentation/slide-previews/
 presentation/*-preview.png
 presentation/~$*
